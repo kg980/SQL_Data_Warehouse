@@ -1,4 +1,17 @@
 --- Silver Data Transformations
+/*
+========================================================================================
+Stored Procedure: Load Silver Layer (Bronze -> Silver)
+========================================================================================
+
+Script Purpose:
+	Load data into 'silver' schema from existing bronze tables files.
+	- Truncates silver tables before loading data.
+	- transforms data from bronze tables to corresponding silver tables.
+
+Usage Example:
+	EXEC silver.load_silver;
+*/
 
 
 CREATE OR ALTER PROCEDURE silver.load_silver AS
