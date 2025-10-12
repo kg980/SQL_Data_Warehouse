@@ -1,11 +1,12 @@
 # SQL_Data_Warehouse
 
 Welcome to the SQL Data Warehouse repository! 
-`n
+
 🥉🥈🥇
+
 This project showcases the implementation of a modern data warehouse using SQL Server, adhering to the Medallion Architecture (Bronze, Silver, Gold layers). It's designed to transform raw business data into structured, analytics-ready datasets.
+
 🥉🥈🥇
-`n
 ---
 
 ### Project Overview
