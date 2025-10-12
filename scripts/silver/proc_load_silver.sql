@@ -5,9 +5,17 @@ Stored Procedure: Load Silver Layer (Bronze -> Silver)
 ========================================================================================
 
 Script Purpose:
-	Load data into 'silver' schema from existing bronze tables files.
-	- Truncates silver tables before loading data.
-	- transforms data from bronze tables to corresponding silver tables.
+	Performs quality checks for data consistency, dtandardization and accuracy for the 'silver' schema.
+	Checks include:
+	- Null/duplicate pkeys
+	- unexpected spaces in strings
+	- data normaliation and standardization
+	- invalid date ranges
+	- consistency between related pkey/fkey fields
+
+WARNING:
+- Truncates silver tables before loading data. Existing data will be lost.
+- transforms data from bronze tables to corresponding silver tables.
 
 Usage Example:
 	EXEC silver.load_silver;
