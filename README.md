@@ -1,6 +1,11 @@
 # SQL_Data_Warehouse
 
-Welcome to the SQL Data Warehouse repository! This project showcases the implementation of a modern data warehouse using SQL Server, adhering to the Medallion Architecture (Bronze, Silver, Gold layers). It's designed to transform raw business data into structured, analytics-ready datasets.
+Welcome to the SQL Data Warehouse repository! 
+🥉🥈🥇
+This project showcases the implementation of a modern data warehouse using SQL Server, adhering to the Medallion Architecture (Bronze, Silver, Gold layers). It's designed to transform raw business data into structured, analytics-ready datasets.
+🥉🥈🥇
+
+---
 
 ### Project Overview
 
@@ -15,10 +20,10 @@ This repository demonstrates the end-to-end process of building a data warehouse
 - SQL Server Management Studio (SSMS): Integrated environment for managing SQL infrastructure.
 
 ### Repository Structure
-- bronze/: Raw data ingestion scripts.
-- silver/: Data transformation scripts.
-- gold/: Data modeling and reporting scripts.
-- README.md: Project documentation (you are here, hello!).
+- 🥉 `bronze/`: Raw data ingestion scripts.
+- 🥈 `silver/`: Data transformation scripts.
+- 🥇 `gold/`: Data modeling and reporting scripts.
+- `README.md`: Project documentation (you are here, hello!).
 
 ---
 
