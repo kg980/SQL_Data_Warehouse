@@ -34,17 +34,39 @@ The data warehouse follows a Medallion Architecture with three distinct layers:
 - Silver Layer: Cleaned and transformed data, ready for analysis.
 - Gold Layer: Aggregated and business-ready datasets for reporting and analytics.
 
-<img width="932" height="609" alt="Architecture Diagram drawio" src="https://github.com/user-attachments/assets/e7f19b90-531f-4222-bc3c-8bf599eca851" />
 
 
 Data Flow Diagram
 
-<img width="661" height="403" alt="Data Flow Diagram drawio" src="https://github.com/user-attachments/assets/325976d2-75fe-4b1c-aebd-7a8b90a9d963" />
+
 
 Integration Model Diagram
 
-<img width="701" height="531" alt="Integration Model Diagram drawio" src="https://github.com/user-attachments/assets/56fbe2b4-9a10-4d9d-bcd5-f06cd925fcfa" />
 
 Star Diagram
 
-<img width="721" height="442" alt="Star Diagram - Gold drawio" src="https://github.com/user-attachments/assets/d5823d28-3637-4010-bd2f-65dc29e4d3b4" />
+
+
+---
+
+📊 Sample Queries
+
+Here are some sample queries to get you started:
+
+Top 10 Customers by Sales:
+
+```
+SELECT TOP 10 customer_id, SUM(sales_amount) AS total_sales
+FROM gold.fact_sales
+GROUP BY customer_id
+ORDER BY total_sales DESC;
+```
+
+Product Sales Trends:
+
+```
+SELECT product_id, YEAR(order_date) AS year, SUM(sales_amount) AS annual_sales
+FROM gold.fact_sales
+GROUP BY product_id, YEAR(order_date)
+ORDER BY year, product_id;
+```
