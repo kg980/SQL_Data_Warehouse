@@ -1,3 +1,40 @@
+/*
+========================================================================================
+Script Name: Load Gold Layer (Create Gold Views)
+========================================================================================
+
+Purpose:
+	This script creates the **Gold Layer** views in the data warehouse.  
+	The Gold Layer represents the **business-ready** data model, integrating and enriching
+	cleansed data from the **Silver Layer** to support reporting, analytics, and BI dashboards.
+
+Structure:
+	- **gold.dim_customers**: Customer dimension containing demographic and CRM/ERP-enriched data.
+	- **gold.dim_products**: Product dimension combining CRM product details with ERP category metadata.
+	- **gold.fact_sales**: Sales fact table joining sales transactions with product and customer dimensions.
+
+Dependencies:
+	- Relies on cleaned, standardized Silver Layer tables:
+		- silver.crm_cust_info
+		- silver.crm_prd_info
+		- silver.crm_sales_details
+		- silver.erp_cust_az12
+		- silver.erp_loc_a101
+		- silver.erp_px_cat_g1v2
+
+Usage:
+	Run this script to recreate the Gold Layer views after Silver transformations are refreshed.
+	Use in conjunction with:
+		EXEC silver.load_silver;
+		-- then run this script to refresh Gold views.
+
+Notes:
+	- Views are dropped and recreated to ensure schema consistency.
+	- No data is stored directly in Gold; it is a virtual layer (via SQL views).
+========================================================================================
+*/
+
+
 -- Customer Dimension table. Holds description about the customers.
 DROP VIEW IF EXISTS gold.dim_customers;
 GO
